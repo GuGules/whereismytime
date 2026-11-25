@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+:root {
+  background-color:#f1f5f2;
+  padding-top: 1rem;
+  padding-right: 5%;
+  padding-left: 5%;
+}
+
+.todo-container {
+  border-radius: 10px;
+  border: solid 1px #e6e6ea;
+  background-color: #ffffff;
+  padding: 1rem;
+  color: black;
+}

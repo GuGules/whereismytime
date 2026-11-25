@@ -1,0 +1,30 @@
+{
+  "name": "whereismytime",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc -b && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@iconify/vue": "^5.0.5",
+    "@lucide/vue": "^1.80.0",
+    "@primeuix/themes": "^3.1.1",
+    "@tailwindcss/vite": "^4.3.5",
+    "primevue": "^5.0.5",
+    "tailwindcss": "^4.3.5",
+    "vue": "^3.5.44"
+  },
+  "devDependencies": {
+    "@types/node": "^24.19.2",
+    "@vitejs/plugin-vue": "^6.0.10",
+    "@vue/tsconfig": "^0.9.1",
+    "dotenv": "^18.0.10",
+    "pinia": "^4.1.0",
+    "typescript": "~6.0.3",
+    "vite": "^8.3.6",
+    "vue-tsc": "^3.3.14"
+  }
+}
