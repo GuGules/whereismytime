@@ -27,13 +27,13 @@ jobs:
       - name: Installer les dépendances
         run: npm install
 
-      - name: Construire le projet
-        run: npm run build
-        env:
-          VITE_PV_LICENCE_KEY: ${{ secrets.VITE_PV_LICENCE_KEY }}
-
       - name: Installer Vercel CLI
         run: npm install --global vercel@latest
+
+      - name: Construire le projet
+        run: vercel build --prod --token="${{ secrets.VERCEL_TOKEN }}"
+        env:
+          VITE_PV_LICENCE_KEY: ${{ secrets.VITE_PV_LICENCE_KEY }}
 
       - name: Récupérer la configuration Vercel
         run: vercel pull --yes --environment=production --token="${{ secrets.VERCEL_TOKEN }}"
