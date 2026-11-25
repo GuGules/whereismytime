@@ -11,7 +11,7 @@ import { Icon } from "@iconify/vue";
 
       <p class="info-author">
         Un site créé par <strong>Jules Pillot</strong>.
-        Utilisation de l'IA limitée à cet encadré.
+        Utilisation de l'IA limitée à cet encadré et à la documentation.
       </p>
 
       <p class="info-tech">
