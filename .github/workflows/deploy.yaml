@@ -34,7 +34,7 @@ jobs:
         run: vercel pull --yes --environment=production --token="${{ secrets.VERCEL_TOKEN }}"
 
       - name: Construire le projet
-        run: vercel build --prod --token="${{ secrets.VERCEL_TOKEN }}"
+        run: vercel build --prod --yes --token="${{ secrets.VERCEL_TOKEN }}"
         env:
           VITE_PV_LICENCE_KEY: ${{ secrets.VITE_PV_LICENCE_KEY }}
 
