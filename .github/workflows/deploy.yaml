@@ -39,4 +39,4 @@ jobs:
           VITE_PV_LICENCE_KEY: ${{ secrets.VITE_PV_LICENCE_KEY }}
 
       - name: Déployer sur Vercel
-        run: vercel deploy --prod --yes --token="${{ secrets.VERCEL_TOKEN }}" dist/
+        run: vercel deploy --prod --yes --token="${{ secrets.VERCEL_TOKEN }}"
