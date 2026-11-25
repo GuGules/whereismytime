@@ -18,6 +18,9 @@ function doneTodo(todoId:number){
 <template>
   <div class="todo-container mb-2">
     <h1>Liste des todos</h1>
+    <div class="text-sm" v-if="todosStore.userTodosData.length == 0">
+      Aucun todo pour le moment
+    </div>
     <div v-for="todo in todosStore.userTodosData">
       <TodoCard
         :done="todo.done"
