@@ -1,0 +1,42 @@
+name: Build and deploy to Vercel
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: production
+
+    env:
+      VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+
+    steps:
+      - name: Récupérer le code
+        uses: actions/checkout@v4
+
+      - name: Installer Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Installer les dépendances
+        run: npm install
+
+      - name: Construire le projet
+        run: npm run build
+        env:
+          VITE_PV_LICENCE_KEY: ${{ secrets.VITE_PV_LICENCE_KEY }}
+
+      - name: Installer Vercel CLI
+        run: npm install --global vercel@latest
+
+      - name: Récupérer la configuration Vercel
+        run: vercel pull --yes --environment=production --token="${{ secrets.VERCEL_TOKEN }}"
+
+      - name: Déployer sur Vercel
+        run: vercel deploy --prod --yes --token="${{ secrets.VERCEL_TOKEN }}"
